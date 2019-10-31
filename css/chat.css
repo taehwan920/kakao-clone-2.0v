@@ -1,0 +1,225 @@
+.header-wrapper {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+  background: white;
+  padding: 5px 0px;
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.3),
+    0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.chats-body .header,
+.chats-body .status-bar {
+  padding: 0px 20px;
+}
+
+.chats-body {
+  padding: 10px 0px;
+  padding-top: 100px;
+  background-image: url("../images/chat-bg.png");
+  min-height: 1000vh; /*viewport height. chat class가 적용된 div에*/
+}
+
+.chat__write-container {
+  position: fixed;
+  bottom: 0px;
+  margin: 0 auto; /*margin~ right=fixed가운데정렬*/
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fcfcfc;
+  padding: 13px;
+  width: 100%;
+  /* box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025); 맨 마지막값은 opacity */
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 13px 27px -12px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+  50% {
+    box-shadow: 0 13px 27px -60px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+  100% {
+    box-shadow: 0 13px 27px -12px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+}
+
+.chat__write {
+  margin: 0 auto;
+  bottom: 0px;
+  width: 100%;
+  border-radius: 0;
+  padding: 15px 60px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  transition: width 0.5s ease-in-out, border-radius 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
+
+.chat__write:focus {
+  outline: none;
+  width: 80%;
+  transform: translateY(-100px);
+  border-radius: 40px;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  animation: float 3s linear infinite forwards;
+}
+
+.chat__icon-left {
+  position: absolute; /*absolute는 relative갖고있는애가 없어서 body왼쪽 끝에 붙음.
+  absolute는 static이 아닌 포지션에 전부 반응함. relative가 있으면 거기에 우선적으로 반응*/
+  left: 10px;
+}
+
+.chat__icon-right {
+  position: absolute;
+  right: 10px; /*relative갖고있는애가 없어서 body 오른쪽끝에 붙음.*/
+}
+
+.chat__icon {
+  font-size: 18px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.chat__write:focus ~ .chat__icon {
+  /*~는 sibling까지..?*/
+  opacity: 0;
+}
+
+.chat__write i {
+  font-size: 25px;
+}
+
+.chat__write-column input {
+  padding-left: 0;
+  padding: 15px 10px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+}
+
+.chat-screen .chat__messages {
+  border-top: 1px solid #f7f7f7;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.chat__messages .chat__timestamp {
+  background: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px
+      /*rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, */;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.message .message__content {
+  width: 100%;
+}
+
+.incoming-message {
+  align-self: flex-start;
+}
+
+.sent-message {
+  align-self: flex-end;
+}
+
+.message .message__bubble {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  display: block; /*span은 텍스트 처리 되니까 box로 인식하게 하려면 이렇게 써줘야함.*/
+}
+
+.incoming-message .message__author {
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.incoming-message .message__bubble {
+  border-top-left-radius: 0px;
+  background-image: linear-gradient(to right, #ffffff, #6dd5ed);
+}
+
+.sent-message .message__bubble {
+  border-top-right-radius: 0px;
+  background-image: linear-gradient(to right, #ffefba, #ffffff);
+}
+
+@keyframes incomingAnim {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+.incoming-message {
+  animation: incomingAnim 0.5s ease-in forwards;
+}
+
+.incoming-message img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+  animation: spin 1s linear infinite;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
+}
+
+@keyframes sentAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(+300px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.sent-message {
+  animation: sentAnimation 0.5s ease-out forwards;
+  /*forwards는 애니가끝난후에도 값을유지*/
+}

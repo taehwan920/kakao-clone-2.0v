@@ -8,7 +8,8 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
     />
-    <title>Freinds ! Kakao Clone</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Friends ! Kakao Clone</title>
   </head>
   <body>
     <div class="status-bar">
@@ -23,7 +24,7 @@
         <i class="fas fa-battery-full"></i>
       </div>
     </div>
-    <header clas="header">
+    <header class="header">
       <div class="header__header-column">
         <h1 class="header__title">Friends</h1>
       </div>
@@ -38,7 +39,7 @@
     </header>
     <main class="friends">
       <header class="friends__header">
-        <div class="friends__friend friend friend--lg">
+        <div class="friends__friend friend">
           <div class="friend__column">
             <img src="images/shirts.jpg" class="g-avatar friend__avatar" />
             <div class="friend__content">
@@ -48,11 +49,11 @@
           </div>
         </div>
       </header>
-      <div class="friend__plus">
-        <h5 class="friends_title">Plus friend</h5>
+      <div class="friends__plus">
+        <h5 class="friends__title">Plus Friend</h5>
         <div class="friends__friend friend">
-          <div class="friends__column">
-            <img src="images/shirts.jpg" class="g-avatar friend__avatar" />
+          <div class="friend__column">
+            <img src="images/batman.jpg" class="friend__avatar friend" />
             <div class="friend__content">
               <span class="friend__name">Plus Friend</span>
             </div>
@@ -63,15 +64,15 @@
         <h5 class="friends__title">Friends 14</h5>
         <li class="friends__friend friend">
           <div class="friend__column">
-            <img src="images/shirts.jpg" class="g-avatar friend__avatar" />
+            <img src="images/joker.jpg" class="friend__avatar" />
             <div class="friend__content">
               <span class="friend__name">Arthur Fleck</span>
               <span class="friend__status">I had a bad day</span>
             </div>
           </div>
-          <div class="friend_column">
+          <div class="friend__column">
             <div class="friend__now-listening">
-              <span>FTISLAND(FT.NomadCoder)</span>
+              <span>♬ That's life (FT.Shaw..)</span>
               <i class="fas fa-play"></i>
             </div>
           </div>
@@ -87,6 +88,7 @@
         </li>
         <li class="nav__list-item">
           <a href="index.html" class="nav__list-link">
+            <div class="nav__badge">8</div>
             <i class="far fa-comment"></i>
           </a>
         </li>
@@ -102,5 +104,8 @@
         </li>
       </ul>
     </nav>
+    <div class="bigScreen">
+      <span class="bigScreen__text">Please make your screen small!</span>
+    </div>
   </body>
 </html>
