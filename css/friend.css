@@ -4,6 +4,15 @@
   align-items: center;
 }
 
+.chats__chat.friend,
+.friend.friends__friend {
+  margin-bottom: 15px;
+}
+
+.chats__chat.friend {
+  position: relative;
+}
+
 .friend .friend__avatar {
   width: 50px;
   border-radius: 38%;
@@ -39,6 +48,21 @@
 .friend__content .friend__bottom-text,
 .friend .chat__timestamp {
   opacity: 0.6;
+}
+
+.chat__badge {
+  position: absolute;
+  color: white;
+  right: 90px;
+  font-size: 13px;
+  background: #dc5d46;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
 .friend__content .friend__bottom-text {
